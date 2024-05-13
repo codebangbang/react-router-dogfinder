@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import Nav from "./Nav";
-import DogList from "./DogList";
 import RouteList from "./RouteList";
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
 
   return (
     <div>
-      <h1>Howdy</h1>
       <BrowserRouter>
         <Nav dogs={dogs.data} />
         <RouteList dogs={dogs.data} />

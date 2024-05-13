@@ -8,7 +8,7 @@ function RouteList({ dogs }) {
     <Routes>
       <Route path="/dogs" element={<DogList dogs={dogs} />} />
 
-      <Route path="/dogs:name" element={<FilterDogDetails dogs={dogs} />} />
+      <Route path="/dogs/:name" element={<FilterDogDetails dogs={dogs} />} />
 
       <Route path="/*" element={<Navigate to="/dogs" />} />
     </Routes>

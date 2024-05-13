@@ -13,7 +13,8 @@
     "react-dom": "*",
     "react-router-dom": "*",
     "react-scripts": "*",
-    "web-vitals": "*"
+    "web-vitals": "*",
+    "babel/plugin-proposal-private-property-in-object": "*"
   },
   "scripts": {
     "start": "concurrently --kill-others \"npm run start-fe\" \"npm run start-be\"",
