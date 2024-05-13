@@ -1,38 +1,37 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import Nav from "./Nav";
 import DogList from "./DogList";
 import RouteList from "./RouteList";
 
-
 function App() {
   const [dogs, setDogs] = useState({
     data: null,
     isLoading: true,
-});
+  });
 
-useEffect(() => {
+  useEffect(() => {
     async function fetchDogs() {
-        const res = await axios.get("http://localhost:3001/dogs");
-        setDogs({ data: res.data, isLoading: false });
+      const res = await axios.get("http://localhost:5001/dogs");
+      setDogs({ data: res.data, isLoading: false });
     }
     fetchDogs();
-}
-, []);
+  }, []);
 
-if (dogs.isLoading) {
+  if (dogs.isLoading) {
     return <p>Loading...</p>;
-}
+  }
 
-return (
-    <div className="App">
-        <BrowserRouter>
-            <Nav dogs={dogs.data} />
-            <RouteList dogs={dogs.data} />
-        </BrowserRouter>
+  return (
+    <div>
+      <h1>Howdy</h1>
+      <BrowserRouter>
+        <Nav dogs={dogs.data} />
+        <RouteList dogs={dogs.data} />
+      </BrowserRouter>
     </div>
-);
+  );
 }
 
 export default App;
